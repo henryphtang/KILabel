@@ -484,6 +484,12 @@ NSString * const KILabelLinkKey = @"link";
         
         if (![self ignoreMatch:realURL])
         {
+            if ([self isDetectEmailEnabled]) {
+                if ([realURL containsString:@"@"]) {
+                    // Do not treat email as touchable link
+                    continue;
+                }
+            }
             if ([match resultType] == NSTextCheckingTypeLink)
             {
                 [rangesForURLs addObject:@{KILabelLinkTypeKey : @(KILinkTypeURL),
