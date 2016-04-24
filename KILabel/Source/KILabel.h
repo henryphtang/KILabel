@@ -117,6 +117,11 @@ IB_DESIGNABLE
 @property (nonatomic, assign) IBInspectable KILinkTypeOption linkDetectionTypes;
 
 /**
+ * Enable/disable email detection in URL links
+ */
+@property (nonatomic, assign, getter = isDetectEmailEnabled) IBInspectable BOOL detectEmailEnabled;
+
+/**
  * Set containing words to be ignored as links, hashtags or usernames.
  *
  * @discussion The comparison between the matches and the ignored words is case insensitive.
